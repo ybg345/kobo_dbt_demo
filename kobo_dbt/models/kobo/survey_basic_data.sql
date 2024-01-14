@@ -25,3 +25,4 @@ FROM(
 	    _geolocation['1'] AS longitude
 	FROM {{ source('public', 'kobo_form_stream') }}
 ) AS a
+
