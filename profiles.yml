@@ -1,0 +1,52 @@
+dbt_tutorial:
+  outputs:
+    dev:
+      dbname: Adventureworks
+      host: localhost
+      pass: 90ly!zRL7TB6
+      port: 5432
+      schema: warehouse
+      threads: 4
+      type: postgres
+      user: postgres
+    prod:
+      dbname:
+      - dbname
+      host:
+      - host
+      pass:
+      - prod_password
+      port:
+      - port
+      schema:
+      - prod_schema
+      threads:
+      - 1 or more
+      type: postgres
+      user:
+      - prod_username
+  target: dev
+kobo_dbt:
+  outputs:
+    dev:
+      dbname: postgres
+      host: localhost
+      pass: password
+      port: 3000
+      schema: dbt_transformations
+      threads: 4
+      type: postgres
+      user: postgres
+  target: dev
+kobo_test:
+  outputs:
+    dev:
+      dbname: postgres
+      host: localhost
+      pass: password
+      port: 3000
+      schema: dbt
+      threads: 4
+      type: postgres
+      user: postgres
+  target: dev
