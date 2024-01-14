@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: public
+    database: postgres
+    tables:
+      - name: kobo_form_stream
+
+models:
+  - name: survey_basic_data
+    description: "survey basic data"
+    config:
+      constraints_enabled: true
+      column_types:
+        id: int
+        full_name: varchar(32)
+        created_date: date
+        latitute: number
+    columns:
+      - name: id
+        data_type: integer
+        description: ""
+        constraints:
+          - type: not_null
+          - type: primary_key
+        tests:
+          - not_null
+          - unique
+      - name: full_name
+        data_type: varchar(256)
+        description: ""
+      - name: first_name
+        data_type: varchar
+        description: ""
+      - name: last_name
+        data_type: varchar
+        description: ""
+      - name: email
+        data_type: varchar
+        description: ""
+      - name: phone
+        data_type: varchar
+        description: ""
+      - name: created_date
+        data_type: date
+        description: ""
+      - name: data_origin
+        data_type: varchar
+        description: ""
+      - name: geolocation
+        data_type: json
+        description: ""
+      - name: latitude
+        data_type: numeric
+        description: ""
+      - name: longitude
+        data_type: numeric
+        description: ""
